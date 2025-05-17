@@ -1,4 +1,4 @@
-indicador,actual,anterior,unidad,referencia,fecha
+Indicador,Valor_actual,Valor_anterior,Unidad,Referencia,Consulta
 PIB,267.60,246.49,Usd Millones,Dec 2023,17-05-2025
 Tasa de crecimiento del PIB (anual),4.20,3.90,Por Ciento,Dec 2024,17-05-2025
 Pib De Agricultura,8786.00,7989.00,Pen Millones,Dec 2024,17-05-2025

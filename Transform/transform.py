@@ -32,13 +32,13 @@ for root, dirs, files in os.walk(base_path):
 
             # Procesar tabla_1
             for fila in data.get("tabla_1", []):
-                fila['fecha'] = fecha
+                fila['Consulta'] = fecha
                 tabla1_list.append(fila)
 
             # Procesar tabla_2 (una sola fila)
             if "tabla_2" in data:
                 fila2 = data["tabla_2"]
-                fila2['fecha'] = fecha
+                fila2['Consulta'] = fecha
                 tabla2_list.append(fila2)
 
         except Exception as e:

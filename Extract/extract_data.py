@@ -32,46 +32,50 @@ if tabla1:
             referencia = celdas[4].text.strip()
 
             fila_data = {
-                "indicador": indicador,
-                "actual": actual,
-                "anterior": anterior,
-                "unidad": unidad,
-                "referencia": referencia
+                "Indicador": indicador,
+                "Valor_actual": actual,
+                "Valor_anterior": anterior,
+                "Unidad": unidad,
+                "Referencia": referencia
             }
 
             tabla_1.append(fila_data)
 
-            # Guardar referencia específica de la fila "Pib De Servicios"
             if indicador.lower() == "pib de servicios":
                 referencia_servicios = referencia
 
 # ------------------------
-# 3. Extraer segunda tabla (TABLA 2) mapeando encabezados con valores
+# 3. Extraer segunda tabla (TABLA 2) emparejando claves dinámicamente
 # ------------------------
 tabla_2 = {}
 todas_las_tablas = soup.find_all('table')
 
+# Mapeo de nombres amigables
+claves_deseadas = {
+    "real": "Valor_actual",
+    "anterior": "Valor_anterior",
+    "mayor": "Mayor",
+    "menor": "Menor",
+    "fechas": "Fechas",
+    "unidad": "Unidad",
+    "frecuencia": "Frecuencia"
+}
+
 for tabla in todas_las_tablas:
     ths = tabla.find_all('th')
     encabezados = [th.text.strip().lower() for th in ths]
-    
-    if set(["real", "anterior", "mayor", "menor", "fechas", "unidad", "frecuencia"]).issubset(set(encabezados)):
-        # Encontramos la tabla correcta
-        fila_datos = tabla.find('tr', recursive=False)
-        if fila_datos:
-            fila_valores = tabla.find_all('tr')[1]  # Segunda fila = primera de datos
-            celdas = fila_valores.find_all('td')
 
-            # Mapear encabezados con celdas
-            for idx, th in enumerate(ths):
-                clave = th.text.strip().lower()
-                valor = celdas[idx].text.strip() if idx < len(celdas) else ""
-                tabla_2[clave] = valor
+    if set(claves_deseadas.keys()).issubset(set(encabezados)):
+        filas = tabla.find_all('tr')
+        if len(filas) > 1:
+            celdas = filas[1].find_all('td')
+            for idx, encabezado in enumerate(encabezados):
+                clave_limpia = encabezado.lower()
+                if clave_limpia in claves_deseadas and idx < len(celdas):
+                    tabla_2[claves_deseadas[clave_limpia]] = celdas[idx].text.strip()
+            tabla_2["Referencia"] = referencia_servicios if referencia_servicios else "no disponible"
+        break
 
-            # Añadir campo extra de referencia (desde tabla_1)
-            tabla_2["referencia"] = referencia_servicios if referencia_servicios else "no disponible"
-        break  # Ya encontramos la tabla
-    
 # ------------------------
 # 4. Construir JSON final
 # ------------------------
@@ -81,7 +85,7 @@ json_final = {
 }
 
 # ------------------------
-# 5. Guardar en carpeta EXTRACT/<fecha-hoy>/pib_data.json
+# 5. Guardar en EXTRACT/<fecha-hoy>/pib_data.json
 # ------------------------
 fecha = datetime.now(ZoneInfo("America/Lima")).strftime('%d-%m-%Y')
 carpeta_salida = os.path.join(script_dir, '..', 'EXTRACT', fecha)
