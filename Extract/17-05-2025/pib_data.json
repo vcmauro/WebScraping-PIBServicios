@@ -1,0 +1,92 @@
+{
+    "tabla_1": [
+        {
+            "indicador": "PIB",
+            "actual": "267.60",
+            "anterior": "246.49",
+            "unidad": "Usd Millones",
+            "referencia": "Dec 2023"
+        },
+        {
+            "indicador": "Tasa de crecimiento del PIB (anual)",
+            "actual": "4.20",
+            "anterior": "3.90",
+            "unidad": "Por Ciento",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De Agricultura",
+            "actual": "8786.00",
+            "anterior": "7989.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De La Construcción",
+            "actual": "11186.00",
+            "anterior": "9443.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De Manufactura",
+            "actual": "18241.00",
+            "anterior": "17020.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De Minería",
+            "actual": "18579.00",
+            "anterior": "18129.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De La Administración Pública",
+            "actual": "9329.00",
+            "anterior": "8424.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De Servicios",
+            "actual": "17133.00",
+            "anterior": "16153.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "Pib De Transporte",
+            "actual": "7928.00",
+            "anterior": "8018.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "PIB de Servicios Basicos",
+            "actual": "2848.00",
+            "anterior": "2794.00",
+            "unidad": "Pen Millones",
+            "referencia": "Dec 2024"
+        },
+        {
+            "indicador": "PIB - Tasa de crecimiento trimestral",
+            "actual": "1.30",
+            "anterior": "0.40",
+            "unidad": "Por Ciento",
+            "referencia": "Dec 2024"
+        }
+    ],
+    "tabla_2": {
+        "": "Constant Prices 2007, NSA",
+        "real": "17133.00",
+        "anterior": "16153.00",
+        "mayor": "17133.00",
+        "menor": "7351.00",
+        "fechas": "2007 - 2024",
+        "unidad": "Pen Millones",
+        "frecuencia": "Trimestral",
+        "referencia": "Dec 2024"
+    }
+}
