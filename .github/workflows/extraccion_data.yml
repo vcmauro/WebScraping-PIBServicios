@@ -28,15 +28,15 @@ jobs:
 
       - name: 🌐 Descargar HTML desde TradingEconomics
         run: |
-          python EXTRACT/extraercodigofuente.py
+          python Extract/extraercodigofuente.py
 
       - name: 🧪 Procesar HTML y generar JSON
         run: |
-          python EXTRACT/extract_data.py
+          python Extract/extract_data.py
 
       - name: 🔄 Transformar JSON en CSV
         run: |
-          python TRANSFORM/transform.py
+          python Transform/transform.py
 
       - name: ✅ Commit y Push si hay cambios
         run: |
