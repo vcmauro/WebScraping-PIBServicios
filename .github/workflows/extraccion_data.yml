@@ -1,0 +1,47 @@
+name: Ejecutar ETL PIB Servicios
+
+on:
+  schedule:
+    - cron: '0 14 15 * *'  # Día 15 de cada mes a las 14:00 UTC (9 AM Lima)
+  workflow_dispatch:        # Permite ejecución manual desde GitHub
+
+permissions:
+  contents: write  # Para permitir commits y push
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 pandas
+
+      - name: 🌐 Descargar HTML desde TradingEconomics
+        run: |
+          python EXTRACT/extraercodigofuente.py
+
+      - name: 🧪 Procesar HTML y generar JSON
+        run: |
+          python EXTRACT/extract_data.py
+
+      - name: 🔄 Transformar JSON en CSV
+        run: |
+          python TRANSFORM/transform.py
+
+      - name: ✅ Commit y Push si hay cambios
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add EXTRACT/ TRANSFORM/
+          git commit -m "🔄 Actualización automática ETL: $(date +'%d-%m-%Y')" || echo "Sin cambios"
+          git push
