@@ -42,6 +42,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add EXTRACT/ TRANSFORM/
+          git add Extract/ Transform/
           git commit -m "🔄 Actualización automática ETL: $(date +'%d-%m-%Y')" || echo "Sin cambios"
           git push
