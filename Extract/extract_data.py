@@ -85,10 +85,10 @@ json_final = {
 }
 
 # ------------------------
-# 5. Guardar en EXTRACT/<fecha-hoy>/pib_data.json
+# 5. Guardar en Extract/<fecha-hoy>/pib_data.json
 # ------------------------
 fecha = datetime.now(ZoneInfo("America/Lima")).strftime('%d-%m-%Y')
-carpeta_salida = os.path.join(script_dir, '..', 'EXTRACT', fecha)
+carpeta_salida = os.path.join(script_dir, '..', 'Extract', fecha)
 os.makedirs(carpeta_salida, exist_ok=True)
 
 ruta_salida = os.path.join(carpeta_salida, 'pib_data.json')

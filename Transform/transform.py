@@ -8,8 +8,8 @@ from zoneinfo import ZoneInfo
 # 1. Rutas
 # -----------------------
 script_dir = os.path.dirname(os.path.abspath(__file__))
-base_path = os.path.join(script_dir, '..', 'EXTRACT')
-transform_path = os.path.join(script_dir, 'TRANSFORM')
+base_path = os.path.join(script_dir, '..', 'Extract')
+transform_path = script_dir
 os.makedirs(transform_path, exist_ok=True)
 
 # -----------------------

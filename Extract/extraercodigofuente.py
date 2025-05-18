@@ -15,10 +15,10 @@ response = requests.get(url, headers=headers)
 if response.status_code == 200:
     # Crear carpeta si no existe (opcional, pero recomendable)
     import os
-    os.makedirs("EXTRACT", exist_ok=True)
+    os.makedirs("Extract", exist_ok=True)
 
     # Guardar el HTML en un archivo local
-    with open("EXTRACT/tradingeconomics.html", "w", encoding="utf-8") as f:
+    with open("Extract/tradingeconomics.html", "w", encoding="utf-8") as f:
         f.write(response.text)
 
     print("✅ HTML guardado exitosamente.")
