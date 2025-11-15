@@ -1,0 +1,91 @@
+{
+    "tabla_1": [
+        {
+            "Indicador": "PIB",
+            "Valor_actual": "289.22",
+            "Valor_anterior": "266.96",
+            "Unidad": "Usd Millones",
+            "Referencia": "Dec 2024"
+        },
+        {
+            "Indicador": "Tasa de crecimiento del PIB interanual",
+            "Valor_actual": "2.90",
+            "Valor_anterior": "3.90",
+            "Unidad": "Por Ciento",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De Agricultura",
+            "Valor_actual": "11483.55",
+            "Valor_anterior": "7693.20",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De La Construcción",
+            "Valor_actual": "8853.21",
+            "Valor_anterior": "8019.34",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De Manufactura",
+            "Valor_actual": "18056.22",
+            "Valor_anterior": "16288.26",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De Minería",
+            "Valor_actual": "17279.16",
+            "Valor_anterior": "17366.47",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De La Administración Pública",
+            "Valor_actual": "8154.00",
+            "Valor_anterior": "8072.00",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De Servicios",
+            "Valor_actual": "16251.00",
+            "Valor_anterior": "14064.00",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "Pib De Transporte",
+            "Valor_actual": "8229.00",
+            "Valor_anterior": "7976.00",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "PIB de Servicios Basicos",
+            "Valor_actual": "2830.00",
+            "Valor_anterior": "2876.00",
+            "Unidad": "Pen Millones",
+            "Referencia": "Jun 2025"
+        },
+        {
+            "Indicador": "PIB - Tasa de crecimiento trimestral",
+            "Valor_actual": "0.50",
+            "Valor_anterior": "0.30",
+            "Unidad": "Por Ciento",
+            "Referencia": "Jun 2025"
+        }
+    ],
+    "tabla_2": {
+        "Valor_actual": "16251.00",
+        "Valor_anterior": "14064.00",
+        "Mayor": "17133.00",
+        "Menor": "7351.00",
+        "Fechas": "2007 - 2025",
+        "Unidad": "Pen Millones",
+        "Frecuencia": "Trimestral",
+        "Referencia": "Jun 2025"
+    }
+}
