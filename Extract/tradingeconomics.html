@@ -15,7 +15,9 @@
 
 <script>(function () { var p = new URLSearchParams(window.location.search); if (!p.has('_auth')) return; p.delete('_auth'); var qs = p.toString(); history.replaceState({}, '', window.location.pathname + (qs ? '?' + qs : '')); window.location.reload(); })();</script>
 <script>(function () { function h(n) { return new RegExp('(?:^|;\\s*)' + n.replace(/\./g, '\\.') + '=').test(document.cookie); } if (h('TEIsLoggedIn') || !h('.ASPXAUTH')) return; var e = '; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/', s = ['', '; domain=tradingeconomics.com', '; domain=.tradingeconomics.com'];['.ASPXAUTH', 'TEUsername', 'TENickName', 'TERole', 'TEUserInfo', 'TEName', 'TEUserEmail'].forEach(function (n) { if (!h(n)) return; s.forEach(function (d) { document.cookie = n + '=' + e + d; }); }); document.cookie = 'TEIsLoggedIn=false; domain=.tradingeconomics.com; path=/; SameSite=Lax; Secure; max-age=31536000'; })();</script>
-<script type="text/javascript">var TEChartSettings = {}; var TESymbol = ''; var TECountry = ''; var TECategory = ''; var TEFrequency = ''; var TELanguage = 'es'; var TELastUpdate = '20260831000000'; var TEChartVersion = ''; var symbol = ''; var symbolType = ''; var hasCalendar = false; var isLoggedIn = document.cookie.indexOf('.ASPXAUTH') > -1; var TERole = (document.cookie.match(/(?:^|;\s*)TERole=([^;]*)/) || [])[1] || ''; var TEAlertsName = ''; var TEChartsDatasource = 'https://d3ii0wo49og5mi.cloudfront.net'; var IsMobile =  false; var TEChartsMeta = ''; var TEForecast = []; var TEAuthorization = ''; var TESecurify = ''; var TESecurifyUrl = ''; var TEType = ''; var TEChartUrl = '/peru/gdp-from-services'; var TEComparable = 0; var isAlertsLoaded = false; var IsDarkMode = (function () { try { return localStorage.getItem('IsDarkMode') === 'true'; } catch (e) { return false; } })(); var isPakoLoaded = false; var TEChartsToken = '20260324:loboantunes'; var TEObfuscationkey = 'tradingeconomics-charts-core-api-key'; var isCopyright = false;var TEStreamId= '';</script>
+<script type="text/javascript">var TEChartSettings = {}; var TESymbol = ''; var TECountry = ''; var TECategory = ''; var TEFrequency = ''; var TELanguage = 'es'; var TELastUpdate = '20260930000000'; var TEChartVersion = ''; var symbol = ''; var symbolType = ''; var hasCalendar = false; var isLoggedIn = document.cookie.indexOf('.ASPXAUTH') > -1; var TERole = (document.cookie.match(/(?:^|;\s*)TERole=([^;]*)/) || [])[1] || ''; var TEAlertsName = ''; var TEChartsDatasource = 'https://charts-api.tradingeconomics.com'; var IsMobile =  false; var TEChartsMeta = ''; var TEForecast = []; var TEAuthorization = ''; var TESecurify = ''; var TESecurifyUrl = ''; var TEType = ''; var TEChartUrl = '/peru/gdp-from-services'; var TEComparable = 0; var isAlertsLoaded = false; var IsDarkMode = (function() { try { return localStorage.getItem('IsDarkMode') === 'true'; } catch (e) { return false; } })(); var isPakoLoaded = false; var TEChartsKey = '20260324:loboantunes'; var TEChartsToken = ''; var TEObfuscationkey = 'tradingeconomics-charts-core-api-key'; var TEChartsPath = '/peru/gdp-from-services'; var isCopyright = false;var TEStreamId= '';</script>
+
+<script>var TEAuth = (function () { var KEY = 'te-token', mem = null, pending = null; function now() { return Math.floor(Date.now() / 1000) } function fresh(c) { return c && c.token && now() < c.refresh - 60 } function cached() { if (fresh(mem)) return mem; try { var c = JSON.parse(localStorage.getItem(KEY) || 'null'); if (fresh(c)) return mem = c } catch (e) { } return null } function load() { if (!pending) pending = fetch('/token', { method: 'POST', credentials: 'same-origin', cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json() }).then(function (c) { mem = c; try { localStorage.setItem(KEY, JSON.stringify(c)) } catch (e) { } return c.token }).catch(function (e) { console.log('TEAuth: /token failed', e); return '' }).then(function (t) { pending = null; return t }); return pending } return { ready: function () { var c = cached(); return c ? Promise.resolve(c.token) : load() }, current: function () { var c = cached(); return c ? c.token : '' }, refresh: function () { mem = null; try { localStorage.removeItem(KEY) } catch (e) { } return load() } } })();</script>
 <script type="text/javascript">var DEBUG = false; if (window.location.host.indexOf('localhost') > -1) DEBUG = true; else if (window.location.href.indexOf('debug') > -1) DEBUG = true; if (!DEBUG) { if (!window.console) window.console = {}; var methods = ["log", "debug", "info"]; for (var i = 0; i < methods.length; i++) { console[methods[i]] = function () { }; } }</script>
 <script>window.googletag = window.googletag || { cmd: [] };</script>
 <link rel="icon" href="https://d3e5kp2e91w0k0.cloudfront.net/favicon.svg" type="image/svg+xml" />
@@ -30,9 +32,9 @@
 <body>
     <script>(function(){var c=localStorage.getItem('IsDarkMode')==='true';if(c)document.body.classList.add('dark-theme');window.IsDarkMode=c;})();</script>
     <form method="post" action="/peru/gdp-from-services" id="aspnetForm">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="uR8KQ+Lidh0U75Ojv+vmw2WxbjHX7CQricvw+TvzQDkgzfNaFftrMSOY11Y0O0xei8dlUZ65H9A/9RzrSswElR+D0H0=" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="rjfTBFQoc1G7Nrc9P4PlV42eBkYQmFvvTVxSFt0rNDoC46bmwltrcpZbF6iHydbbHhu5ApIXPAwr4LFL3QHIyGOaKcQ=" />
 
-<script type="text/javascript" language="Javascript">var isCopyright = false;</script><script type="text/javascript" language="Javascript">var TESymbol = 'PERUGDPFROSER'; console.log('TESymbol:', TESymbol);var TELanguage = 'es'; console.log('TELanguage:', TELanguage);TELastUpdate = '202608240215'; console.log('TELastUpdate:', TELastUpdate);TEChart = 'EC'; console.log('TEChart:', TEChart);var TEAlertsName= 'Peru GDP From Trade Maintenance and Vehicle repair Automotive and Motorcycles'; console.log('TEAlertsName:', TEAlertsName);</script><script type="text/javascript" language="Javascript">TEChartUrl = 'https://d3fy651gv2fhd3.cloudfront.net/charts/peru-gdp-from-services.png?s=perugdpfroser&projection=te&v=202608240215V20230410&lang=all';TECountry = 'Peru';TECategory = 'GDP from Services';TEType = 'te';TEFrequency = 'Quarterly';TEForecast =   [17227.00,18466.00,15146.00,18012.00];</script>
+<script type="text/javascript" language="Javascript">var isCopyright = false;</script><script type="text/javascript" language="Javascript">var TESymbol = 'PERUGDPFROSER'; console.log('TESymbol:', TESymbol);var TELanguage = 'es'; console.log('TELanguage:', TELanguage);TELastUpdate = '202608240215'; console.log('TELastUpdate:', TELastUpdate);TEChart = 'EC'; console.log('TEChart:', TEChart);var TEAlertsName= 'Peru GDP From Trade Maintenance and Vehicle repair Automotive and Motorcycles'; console.log('TEAlertsName:', TEAlertsName);</script><script type="text/javascript" language="Javascript">TEChartUrl = 'https://d3fy651gv2fhd3.cloudfront.net/charts/peru-gdp-from-services.png?s=perugdpfroser&projection=te&v=202608240215V20230410&lang=all';TECountry = 'Peru';TECategory = 'GDP from Services';TEType = 'te';TEFrequency = 'Quarterly';TEForecast =   [18466.00,15146.00,18012.00,17977.00];</script>
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9ED6FB81" />
         
         <nav id="ctl00_NavigationUC1_ctl00_menu" class="navbar navbar-dark fixed-top" role="navigation">
@@ -415,7 +417,7 @@
 
 <div id="ctl00_ContentPlaceHolder1_ctl00_Panel1">
 	
-    <div class="tab-content te-tab-content">
+    <div class="tab-content te-tab-content " >
             <div role="tabpanel" class="tab-pane active show" id="historical-desc"><h2 id="description" style="line-height: 1.45em;">El PIB de Servicios en Perú aumentó a 17403 millones de PEN en el segundo trimestre de 2026 desde 14719 millones de PEN en el primer trimestre de 2026. El PIB de Servicios en Perú promedió 12729.01 millones de PEN desde 2007 hasta 2026, alcanzando un máximo histórico de 17859 millones de PEN en el cuarto trimestre de 2025 y un mínimo récord de 7351 millones de PEN en el primer trimestre de 2007.</h2></div>
 
          
@@ -752,6 +754,7 @@
         }
     });
 </script>
+
 
 
 
@@ -1927,13 +1930,12 @@
         }
     });
 </script>
-<script>console.log("/js/chartec.ascx");</script>
+<script>console.log("/js/chartec.ascx"); TEChartsToken = 'f9eca03a4ddc3c4480074717daa69e8571c2dab6e1ff8ff527880bc06eecbf32'; TEAuth.ready();</script>
 
 <script src='https://d1v8a2ofhkdel3.cloudfront.net/cdn/highstock_exporting.2024.10.1.0.js'></script>
 
-
-<link rel="stylesheet" href="https://d2xewprs6ejfae.cloudfront.net/production/ec.min.css?v=20260219">
-<script src="https://d2xewprs6ejfae.cloudfront.net/production/ec.min.js?v=20260219"></script>
+<link rel="stylesheet" href="https://d2xewprs6ejfae.cloudfront.net/production/ec.min.css?v=20261014b">
+<script src="https://d2xewprs6ejfae.cloudfront.net/production/ec.min.js?v=20261014b"></script>
 
 <style>.modal-dialog-centered{display:flex;align-items:center;justify-content:center;height:calc(100% - 60px)}.modal-footer,.modal-header{padding:10px 15px;border:none}#menu-download-dropdown li{padding:0;border-top:none}#menu-download-dropdown li a{padding:10px 20px;display:flex}</style>
 <script>
@@ -3095,6 +3097,10 @@
         if (IsShort) {
             shortenText(300);
         }
+
+        // To replace the summary title for indicators that are markets. ex; commodity/crude-oil
+        window.TEStreamLoaded = true;
+        if (typeof window.TEOnStreamLoaded === "function") window.TEOnStreamLoaded();
         //$("<ul/>", { "class": "list-group", html: items.join("") }).appendTo("#stream");
         streamHeight = $("#stream").height();
     }
@@ -3391,7 +3397,12 @@
         'personalization_storage': 'granted',
         'security_storage': 'granted'
     });
-    ga('config', 'G-SZ14JCTXWQ');
+    ga('config', 'G-SZ14JCTXWQ', {
+        'user_properties': {
+            'isLoggedIn': isLoggedIn ? 'true' : 'false',
+            'IsDarkMode': IsDarkMode ? 'true' : 'false'
+        }
+    });
 </script>
 
 </body>
